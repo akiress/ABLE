@@ -4,8 +4,8 @@ article, aside, figcaption, figure, footer, header, hgroup, nav, section {
 
 body {
     background: #1572ad;
-    background-image: url("../images/zenbg-1.png"), url("../images/zenbg-2.png");
-    background-repeat: repeat-x, repeat;
+    /*background-image: url("../images/zenbg-1.png"), url("../images/zenbg-2.png");*/
+    /*background-repeat: repeat-x, repeat;*/
     border-color: hsla(0, 0%, 0%, 1.0);
     margin: auto;
     width: 960px;
