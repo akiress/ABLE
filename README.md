@@ -6,7 +6,7 @@ provide engaging and entertaining ways to supplement learning outside of the cla
 ## Dependencies ##
 
 ### Server software (Will use one of the two, still deciding) ###
-* Python 2.7 (Possibly 3.3, deciding on that one)
+* Python 2.7
 * Node.js
 
 ### Programming Languages ###
