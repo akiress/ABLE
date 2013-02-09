@@ -20,10 +20,10 @@ JSON (subset of javascript)
 * ViM
     *It is important to know that whatever code anyone writes, I will refactor, retab, and remove/add whitespace to 
     my coding style. Do not take offense to this, as I only do this for uniformity between our styles of coding.
-* GIMP (open source Photoshop)
+* GIMP
 
 ## Running ##
 To start the server
 <pre># python server.py</pre>
 
-In browser, go to *localhost:8080
+In browser, go to localhost:8080
