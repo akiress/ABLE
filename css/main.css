@@ -1,12 +1,6 @@
-article, aside, figcaption, figure, footer, header, hgroup, nav, section {
-    display: block;
-}
-
 body {
     background: #1572ad;
-    /*background-image: url("../images/zenbg-1.png"), url("../images/zenbg-2.png");*/
-    /*background-repeat: repeat-x, repeat;*/
-    border-color: hsla(0, 0%, 0%, 1.0);
+    border-width: 5px solid hsla(0, 0%, 0%, 1.0);
     margin: auto;
     width: 960px;
     font-size: 24pt;
@@ -21,7 +15,7 @@ h1 {
     color: hsla(198, 0%, 66%, 1.0);
 }
 
-h2 {
+#header h2 {
     margin: -20px auto;
     font-family: "Georgia", Times, serif;
     font-style: oblique;
