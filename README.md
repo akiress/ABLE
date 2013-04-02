@@ -25,6 +25,8 @@ JSON (subset of javascript)
 Download nginx here (http://nginx.org/en/download.html)
 Make sure to get the Windows Development version.
 
+The nginx.conf file is the file to be used in the conf folder you unzipped nginx. Make sure to open this file with a text editor and change the path of root to the path where the index.html of ABLE is.
+
 To install:
 <pre>cd c:\<path-to-where-you-want-it>
 unzip nginx-1.3.15.zip
@@ -39,8 +41,8 @@ To start the server, traverse to the nginx folder you unzipped.
 
 ### Shutting down nginx ###
 Use one of the following commands:
-<pre>nginx -s stop		fast shutdown
-nginx -s quit		graceful shutdown</pre>
+<pre>nginx -s stop			fast shutdown
+nginx -s quit		   graceful shutdown</pre>
 <pre>nginx -s reload	 	changing configuration, starting new worker processes with a new configuration, graceful shutdown of old worker processes</pre>
 <pre>nginx -s reopen		re-opening log files</pre>
 
