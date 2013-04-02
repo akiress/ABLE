@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
+<html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
     <title>ABLE Home</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
-    <link href="css\able.css" rel="stylesheet" type="text/css"/>
-    <script src="scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
-    <script src="scripts/main.js" type="text/javascript"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico"/>
+    <link href="../css/able.css" rel="stylesheet" type="text/css"/>
+    <script src="../scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="../scripts/searchindex.js" type="text/javascript"></script>
   </head>
   <body>
     <div id="header">
-      <img src="images/able.png"/>
+      <img src="../images/able.png"/>
       <h2>Applications for Basic Learning and Education</h2>
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pages/about.html">About</a>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/about.html">About</a>
         </li>
-        <li><a href="pages/search.html">Search</a></li>
+        <li><a href="../pages/search.html">Search</a></li>
         <li><a href="#">Games</a>
           <ul>
             <li><a href="#">English</a>
@@ -80,16 +81,11 @@
     </nav>
     </br>
     <div>
-      <p id="para1">
-        Applications for Basic Learning and Education (ABLE) is a web-based collection of interactive educational 
-        programs that provide engaging and entertaining ways to supplement learning outside of the classroom.
-      </p>
-      <p id="para2">
-        Educational institutions, extracurricular tutoring organizations, and involved parents are constantly 
-        searching for new ways to assist learning and reviewing material beyond the restraints of regular school hours. 
-        This search is made far more difficult by students’ reluctance to participate in activities that they perceive 
-        as being tedious or overly time-consuming.
-      </p>
+    	<form action="">
+			<input type="text" id="searchme" />
+			<input type="submit" onclick="searchIndex(); return false;" />
+		</form>
+		<div id="resultshere"></div>
     </div>
   </body>
 </html>
