@@ -7,19 +7,16 @@ provide engaging and entertaining ways to supplement learning outside of the cla
 
 ### Server software (Will use one of the two, still deciding) ###
 * Python 2.7
-* Node.js
 
 ### Programming Languages ###
 HTML5
 CSS
-Javascript/jQuery (Node.js if used is javascript)
-Python (if used)
+Javascript/jQuery
+Python 2.7
 JSON (subset of javascript)
 
 ### Software Used ###
-* ViM
-    *It is important to know that whatever code anyone writes, I will refactor, retab, and remove/add whitespace to 
-    my coding style. Do not take offense to this, as I only do this for uniformity between our styles of coding.
+* Sublime Text 2
 * GIMP
 
 ## Running ##
