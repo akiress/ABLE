@@ -26,7 +26,7 @@ Traverse to the ABLE root folder:
 <pre>npm install</pre>
 
 ## Running ##
-To start the server, traverse to the nginx folder you unzipped.
+To start the server, traverse to the ABLE folder and type:
 <pre>node server</pre>
 
 In browser, go to localhost:8080
