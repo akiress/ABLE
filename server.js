@@ -32,9 +32,7 @@ app.get('/login', routes.login);
 app.get('/math1', routes.math1);
 app.get('/users', user.list);
 
-// var CT = require('./modules/country-list');
 var AM = require('./modules/accountsDB');
-//var EM = require('./modules/email-dispatcher');
 
 app.get('/login', function(req, res){
 // check if the user's credentials are saved in a cookie //
@@ -83,9 +81,6 @@ app.post('/', function(req, res){
   if (req.param('user') != undefined) {
     AM.updateAccount({
       user    : req.param('user'),
-      name    : req.param('name'),
-      email     : req.param('email'),
-      country   : req.param('country'),
       pass    : req.param('pass')
     }, function(e, o){
       if (e){
@@ -113,11 +108,8 @@ app.get('/signup', function(req, res) {
 
 app.post('/signup', function(req, res){
   AM.addNewAccount({
-    name  : req.param('name'),
-    email   : req.param('email'),
     user  : req.param('user'),
     pass  : req.param('pass'),
-    country : req.param('country')
   }, function(e){
     if (e){
       res.send(e, 400);
