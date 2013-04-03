@@ -49,16 +49,9 @@ exports.addNewAccount = function(newData, callback) {
 		if (o) {
 			callback('username-taken');
 		} else {
-			accounts.findOne({email:newData.email}, function(e, o) {
-				if (o) {
-					callback('email-taken');
-				} else {
-					saltAndHash(newData.pass, function(hash){
-						newData.pass = hash;
-						newData.date = moment().format('MMMM Do YYYY, h:mm:ss a');
-						accounts.insert(newData, {safe: true}, callback);
-					});
-				}
+			saltAndHash(newData.pass, function(hash){
+				newData.pass = hash;
+				accounts.insert(newData, {safe: true}, callback);
 			});
 		}
 	});
@@ -67,8 +60,6 @@ exports.addNewAccount = function(newData, callback) {
 exports.updateAccount = function(newData, callback){
 	accounts.findOne({user:newData.user}, function(e, o){
 		o.name 		= newData.name;
-		o.email 	= newData.email;
-		o.country 	= newData.country;
 		if (newData.pass == '') {
 			accounts.save(o, {safe: true}, callback);
 		} else {
@@ -91,31 +82,6 @@ exports.updatePassword = function(email, newPass, callback) {
 			});
 		}
 	});
-}
-
-exports.deleteAccount = function(id, callback) {
-	accounts.remove({_id: getObjectId(id)}, callback);
-}
-
-exports.getAccountByEmail = function(email, callback) {
-	accounts.findOne({email:email}, function(e, o){ callback(o); });
-}
-
-exports.validateResetLink = function(email, passHash, callback) {
-	accounts.find({ $and: [{email:email, pass:passHash}] }, function(e, o){
-		callback(o ? 'ok' : null);
-	});
-}
-
-exports.getAllRecords = function(callback) {
-	accounts.find().toArray(function(e, res) {
-			if (e) callback(e)
-			else callback(null, res)
-	});
-};
-
-exports.delAllRecords = function(callback) {
-	accounts.remove({}, callback); // reset accounts collection for testing //
 }
 
 var generateSalt = function() {
@@ -153,7 +119,6 @@ var findById = function(id, callback) {
 		else callback(null, res)
 	});
 };
-
 
 var findByMultipleFields = function(a, callback) {
 // this takes an array of name/val pairs to search against {fieldName : 'value'} //
