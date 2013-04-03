@@ -9,16 +9,21 @@ provide engaging and entertaining ways to supplement learning outside of the cla
 * GIMP
 * nodejs
 
+### nodejs modules ###
+* Express
+* Jade
+
 ### Programming Languages ###
-HTML5
-CSS
-Javascript/jQuery
-JSON (subset of javascript)
+* HTML5 (Converted to Jade)
+* CSS
+* Javascript/jQuery
+* JSON (subset of javascript)
 
 ## Installing node.js and the dependencies
-[Download nodejs](http://nodejs.org/download/)
+[Download nodejs](http://nodejs.org/download/) and install.
+
 Traverse to the ABLE root folder:
-<pre>npm install -d</pre>
+<pre>npm install</pre>
 
 ## Running ##
 To start the server, traverse to the nginx folder you unzipped.
