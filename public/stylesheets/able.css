@@ -189,17 +189,45 @@ p {
     margin-right: 10px;
 }
 
-#create-account-btn button {
-    width: 25%;
-    padding: 5px;
-}
-
 #account-form-container {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
+    background-color: #efefef;
+    padding: 2px 0 2px 0;
 }
 
 #account-form-container p.subheading {
     font-size: 0.75em;
     color: #212121;
+}
+
+#user-cg {
+    text-align: left;
+    margin-left: 10%;
+    width: 80%;
+    color: #212121;
+}
+
+#user-tf {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#pass-cg {
+    text-align: left;
+    margin-left: 10%;
+    width: 80%;
+    color: #212121;
+}
+
+#pass-tf {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#create-account-btn button {
+    width: 25%;
+    padding: 5px;
 }

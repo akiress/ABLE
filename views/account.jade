@@ -6,19 +6,15 @@ input(type='hidden', value= user._id)#userId
 
 #account-form-container
 	form( method="post")#account-form
-		h1
-		p#sub1.subheading Please tell us a little about yourself.
-		fieldset
-			p.subheading
-			#user-cg.control-group
-				label.control-label(for='user-tf') Username
-				.controls
-					input#user-tf.input-xlarge.disabled(type='text', name='user', value= user.user)
-			#pass-cg.control-group
-				label.control-label(for='pass-tf') Password
-				.controls
-					input#pass-tf.input-xlarge(type='password', name='pass', value='')
-			#create-account-btn
-					button(type="submit")#btn-create
-						i.icon-lock.icon-white
-						| Create
+		p.subheading Please enter a username and password.
+		#user-cg
+			label Username
+			input#user-tf(type='text', name='user', value= user.user)
+		#pass-cg
+			label Password
+			input#pass-tf(type='password', name='pass', value='')
+		#create-account-btn
+				button(type="submit")#btn-create
+					i.icon-lock.icon-white
+					| Create
+include includes/errors

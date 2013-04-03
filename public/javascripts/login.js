@@ -5,7 +5,7 @@ $(document).ready(function(){
 		this.controlGroups = [$('#user-cg'), $('#pass-cg')];
 		
 	// bind the form-error modal window to this controller to display any errors //
-		this.alert = $('.modal-form-errors');
+		this.alert = $('#formerrors');
 		this.alert.modal({ show : false, keyboard : true, backdrop : true});
 		
 		this.validateName = function(s) {
@@ -21,8 +21,8 @@ $(document).ready(function(){
 		}
 		
 		this.showErrors = function(a) {
-			$('.modal-form-errors .modal-body p').text('Please correct the following problems :');
-			var ul = $('.modal-form-errors .modal-body ul');
+			$('#formerrors .errorbody p').text('Please correct the following problems :');
+			var ul = $('#formerrors .errorbody ul');
 				ul.empty();
 			for (var i=0; i < a.length; i++) ul.append('<li>'+a[i]+'</li>');
 			this.alert.modal('show');
@@ -55,7 +55,7 @@ $(document).ready(function(){
 		this.loginErrors.modal({ show : false, keyboard : true, backdrop : true });
 		this.showLoginError = function(t, m) {
 			$('.modal-alert .modal-header h3').text(t);
-			$('.modal-alert .modal-body p').text(m);
+			$('.modal-alert .errorbody p').text(m);
 			this.loginErrors.modal('show');
 		}
 	}
