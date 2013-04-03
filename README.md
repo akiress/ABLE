@@ -23,7 +23,7 @@ provide engaging and entertaining ways to supplement learning outside of the cla
 ## Installing node.js and the dependencies
 [Download nodejs](http://nodejs.org/download/) and install.
 
-Traverse to the ABLE root folder:
+Open a command prompt and traverse to the ABLE root folder:
 <pre>npm install</pre>
 
 ## Installing MongoDB ##
@@ -34,9 +34,26 @@ Unzip the files into C:\ (or anywhere you like, doesn't really matter).
 ## Running ##
 Start MongoDB first. Open up a command prompt and traverse to the root directory of your MongoDB installation.
 <pre>cd bin
-mongod.exe</pre>
+mongod.exe  --dbpath exact-path-to-the-database</pre>
 
-To start the server, traverse to the ABLE folder and type:
+Then start the server, traverse to the ABLE folder and type:
 <pre>node server</pre>
 
 In browser, go to localhost:8080
+
+
+## MongoDB ##
+To see what is inside of the database once it has started:
+
+Open a command prompt and traverse to the MongoDB installation folder.
+<pre>mongo</pre>
+<pre>show collections</pre>
+
+If any collections were listed, you can see the contents of those by
+<pre>db.name-of-collection.find()</pre>
+
+## Sample usernames and passwords for the site ##
+Username | Password<br>
+apple | apples<br>
+oranges | bananas<br>
+hi2u | OU812<br>
