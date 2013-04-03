@@ -27,3 +27,8 @@ exports.login = function(req, res){
   res.render('login', 
   	{ title: 'Login' });
 };
+
+exports.math1 = function(req, res){
+  res.render('math1',
+    { title: 'Math1' });
+};

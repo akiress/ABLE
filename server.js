@@ -29,10 +29,11 @@ app.get('/search', routes.search);
 app.get('/games', routes.games);
 app.get('/act', routes.act);
 app.get('/login', routes.login);
+app.get('/math1', routes.math1);
 app.get('/users', user.list);
 
 // var CT = require('./modules/country-list');
-var AM = require('./modules/account-manager');
+var AM = require('./modules/accountsDB');
 //var EM = require('./modules/email-dispatcher');
 
 app.get('/login', function(req, res){
