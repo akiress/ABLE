@@ -132,3 +132,66 @@ p {
     font-size: .85em;
     color: hsla(180,100%,97%,1);
 }
+
+#login-container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #efefef;
+    padding: 2px 0 2px 0;
+}
+
+#login-container p.subheading {
+    font-size: 0.75em;
+    color: #212121;
+}
+
+#username {
+    text-align: left;
+    margin-left: 10%;
+    width: 80%;
+    color: #212121;
+}
+
+#username input {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#password {
+    text-align: left;
+    margin-left: 10%;
+    width: 80%;
+    color: #212121;
+}
+
+#password input {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#sign-in button {
+    width: 25%;
+    padding: 5px;
+}
+
+#login-container .checkbox {
+    margin: 0 auto;
+    font-size: 0.75em;
+    color: #212121;
+}
+
+#create-account {
+    float: right;
+    font-size: 0.75em;
+    color: #efefef;
+    margin-right: 10px;
+}
+
+#forgot-password {
+    float: left;
+    font-size: 0.75em;
+    color: #efefef;
+    margin-left: 10px;
+}

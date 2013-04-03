@@ -1,13 +1,28 @@
 !!! 5
 html
 	head
-		meta(name='viewport', content='width=device-width, initial-scale=1.0')
-		meta(http-equiv='content-type', content='text/html;charset=UTF-8')
 		title ABLE Login
-		link(rel='shortcut icon', type='image/x-icon', href='/images/favicon.ico')
-		link(href='/stylesheets/able.css', rel='stylesheet', type='text/css')
-		script(src='/javascripts/jquery-1.8.3.min.js', type='text/javascript')
-		script(src='/javascripts/main.js', type='text/javascript')
+		include includes/head
 	body
-		include header.jade
-		include menu.jade
+		include includes/header
+		include includes/menu
+		#login-container
+			form( method="post")#login-form
+				p.subheading Please Login To Your Account
+				#username
+					label Username 
+					input(type="text", name="user")
+				#password
+					label Password
+					input(type="password", name="pass")
+				#sign-in
+					button(type="submit")#btn-login
+						i.icon-lock.icon-white
+						| Sign in
+				#remember
+					label#remember-me.checkbox Remember Me
+						input(type="checkbox", checked='checked')
+		hr
+		#login-bottom
+			a(href='#')#forgot-password Forgot Your Password?
+			a(href='/signup')#create-account Create An Account
