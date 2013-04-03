@@ -21,8 +21,9 @@ html
 						| Sign in
 				#remember
 					label#remember-me.checkbox Remember Me
-						input(type="checkbox", checked='checked')
+						input(type="checkbox")
 		hr
 		#login-bottom
-			a(href='#')#forgot-password Forgot Your Password?
 			a(href='/signup')#create-account Create An Account
+	block scripts
+		script(src='/javascripts/login.js')

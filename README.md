@@ -13,7 +13,6 @@ provide engaging and entertaining ways to supplement learning outside of the cla
 * Express
 * Jade
 * Mongodb
-* Emailjs
 
 ### Programming Languages ###
 * HTML5 (Converted to Jade)

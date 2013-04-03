@@ -189,9 +189,17 @@ p {
     margin-right: 10px;
 }
 
-#forgot-password {
-    float: left;
+#create-account-btn button {
+    width: 25%;
+    padding: 5px;
+}
+
+#account-form-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#account-form-container p.subheading {
     font-size: 0.75em;
-    color: #efefef;
-    margin-left: 10px;
+    color: #212121;
 }

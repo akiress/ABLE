@@ -1,9 +1,7 @@
 {
   "name": "ABLE",
   "description": "ABLE - CSC 3380 project.",
-  "contributors": "Benjamin Guitreau, Morgan Hargrove, Franshetta Hibbler",
   "version": "0.0.01",
-  "private": true,
   "engines": {
     "node": "0.10.x"
   },
@@ -12,9 +10,7 @@
   },
   "dependencies": {
     "express": "3.x",
-    "restify": "2.x",
     "jade": "*",
-    "mongodb": "1.x",
-    "emailjs": "0.x"
+    "mongodb": "1.x"
   }
 }
