@@ -1,3 +1,4 @@
 SampleTestStuff/
 mongod.lock
 node_modules/
+*.xcf

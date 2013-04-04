@@ -1,7 +1,11 @@
-doctype 5
+!!! 5
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		block head
+			include includes/head
+	body
+		block content
+			include includes/header
+			include includes/menu
+		block foot
+			include includes/footer

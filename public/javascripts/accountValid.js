@@ -4,11 +4,6 @@ function AccountValid(){
 
 	this.validateName = function(data) {
 		return data.length >= 3;
-		/*if (data.length >= 3) {
-			return true;
-		} else {
-			return false;
-		}*/
 	}
 
 	this.validatePassword = function(data) {
@@ -17,13 +12,6 @@ function AccountValid(){
 		} else {
 			return data.length >= 6;
 		}
-		/*if ($('userId').val() && data === ''){
-			return true;
-		} else if (data.length >= 6) {
-			return true;
-		} else {
-			return false;
-		}*/
 	}
 }
 

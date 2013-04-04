@@ -1,30 +1,28 @@
-!!! 5
-html
-	head
-		title ABLE Login
-		include includes/head
-		block scripts
-			script(src='/javascripts/login.js')
-	body
-		include includes/header
-		include includes/menu
-		#login-container
-			form( method="post")#login-form
-				p.subheading Please Login To Your Account
-				#username
-					label Username 
-					input(type="text", name="user")
-				#password
-					label Password
-					input(type="password", name="pass")
-				#sign-in
-					button(type="submit")#btn-login
-						i.icon-lock.icon-white
-						| Sign in
-				#remember
-					label#remember-me.checkbox Remember Me
-						input(type="checkbox")
-		hr
-		#login-bottom
-			a(href='/signup')#create-account Create An Account
+extends layout
+
+append head
+	title ABLE Login
+	script(src='/javascripts/login.js')
+	script(src='/javascripts/loginValid.js')
+
+append content
+	#login-container
+		form( method="post")#login-form
+			p.subheading Please Login To Your Account
+			#username
+				label Username 
+				input(type="text", name="user")
+			#password
+				label Password
+				input(type="password", name="pass")
+			#sign-in
+				button(type="submit")#btn-login
+					i.icon-lock.icon-white
+					| Sign in
+			#remember
+				label#remember-me.checkbox Remember Me
+					input(type="checkbox")
+	hr
+	#login-bottom
+		a(href='/signup')#create-account Create An Account
 	

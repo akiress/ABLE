@@ -1,11 +1,9 @@
-!!! 5
-html
-	head
-		title ABLE Signup
-		include includes/head
-		script(src='/javascripts/signup.js')
-		script(src='/javascripts/accountValid.js')
-	body
-		include includes/header
-		include includes/menu
-		include account	
+extends layout
+
+append head
+	title ABLE Signup
+	script(src='/javascripts/signup.js')
+	script(src='/javascripts/accountValid.js')
+		
+append content
+	include account	

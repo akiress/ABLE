@@ -1,14 +1,12 @@
-!!! 5
-html
-  html
-    head
-      title ABLE Search
-      include includes/head
-    body
-      include includes/header
-      include includes/menu
-      div
-        form(action='')
-          input#searchme(type='text', placeholder='Subject of interest', size='50')
-          input(type='submit', onclick='searchIndex(); return false;')
-        #resultshere
+extends layout
+
+append head
+	title ABLE Search
+
+append content
+	div
+		form(action='')
+			input#searchme(type='text', placeholder='Subject of interest', size='50')
+			input(type='submit', onclick='searchIndex(); return false;')
+		#resultshere
+	script(src='/javascripts/searchindex.js')
