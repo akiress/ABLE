@@ -3,6 +3,8 @@ html
 	head
 		title ABLE Login
 		include includes/head
+		block scripts
+			script(src='/javascripts/login.js')
 	body
 		include includes/header
 		include includes/menu
@@ -25,5 +27,4 @@ html
 		hr
 		#login-bottom
 			a(href='/signup')#create-account Create An Account
-	block scripts
-		script(src='/javascripts/login.js')
+	

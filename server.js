@@ -1,6 +1,5 @@
 var express = require('express')
 var routes = require('./routes')
-var user = require('./routes/user')
 var http = require('http')
 var path = require('path');
 var app = express();
@@ -30,7 +29,6 @@ app.get('/games', routes.games);
 app.get('/act', routes.act);
 app.get('/login', routes.login);
 app.get('/math1', routes.math1);
-app.get('/users', user.list);
 
 var AM = require('./modules/accountsDB');
 
@@ -113,8 +111,10 @@ app.post('/signup', function(req, res){
   }, function(e){
     if (e){
       res.send(e, 400);
+      res.render('/signup');
     } else{
       res.send('ok', 200);
+      res.render('/');
     }
   });
 });
