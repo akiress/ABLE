@@ -217,27 +217,27 @@ p {
     width: 100%;
 }
 
-#pass-cg1 {
+#pass-cg {
     text-align: left;
     margin-left: 10%;
     width: 80%;
     color: #212121;
 }
 
-#pass-cg1 input {
+#pass-cg input {
     display: block;
     margin: 0 auto;
     width: 100%;
 }
 
-#pass-cg2 {
+#pass-cgc {
     text-align: left;
     margin-left: 10%;
     width: 80%;
     color: #212121;
 }
 
-#pass-cg2 input {
+#pass-cgc input {
     display: block;
     margin: 0 auto;
     width: 100%;

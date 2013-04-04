@@ -2,20 +2,20 @@
 // preset form values if we receive a userdata object //
 - user = typeof(udata) != 'undefined' ? udata : { }
 // store the userId on the client side in a hidden input field //
-input(type='hidden', value= user._id)#userId
+input(type='hidden', value=user._id)#userId
 
 #account-form-container
-	form#account-form(autocomplete='off', method='get', action='')
+	form(autocomplete='off', method='post', action='')#account-form
 		p.subheading Please enter a username and password. Username should be at least 3 characters and password at least 6 characters.
 		#user-cg
-			label Username
-			input(type='text', name='user', value= user.user)
-		#pass-cg1
-			label Password
-			input(type='password', name='pass', value='')
-		#pass-cg2
-			label Confirm Password
-			input(type='password', name='pass', value='')
+			label(for='user-tf') Username
+			input#user-tf(type='text', name='user', value= user.user)
+		#pass-cg
+			label(for='pass-tf') Password
+			input#pass-tf(type='password', name='pass', value='')
+		#pass-cgc
+			label(for='pass-tfc') Confirm Password
+			input#pass-tfc(type='password', name='pass', value='')
 		#create-account-btn
 				button(type="submit")#btn-create
 					i.icon-lock.icon-white

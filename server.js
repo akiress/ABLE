@@ -35,7 +35,7 @@ var AM = require('./modules/accountsDB');
 app.get('/login', function(req, res){
 // check if the user's credentials are saved in a cookie //
   if (req.cookies.user == undefined || req.cookies.pass == undefined){
-    res.render('/login', { title: 'Hello - Please Login To Your Account' });
+    res.render('login', { title: 'Hello - Please Login To Your Account' });
   } else{
 // attempt automatic login //
     AM.autoLogin(req.cookies.user, req.cookies.pass, function(o){
@@ -43,7 +43,7 @@ app.get('/login', function(req, res){
           req.session.user = o;
         res.redirect('/');
       } else{
-        res.render('/login', { title: 'Hello - Please Login To Your Account' });
+        res.render('login', { title: 'Hello - Please Login To Your Account' });
       }
     });
   }
@@ -68,8 +68,8 @@ app.get('/', function(req, res) {
     if (req.session.user == null){
         res.redirect('/');
     } else {
-    res.render('/', {
-      title : 'Control Panel',
+    res.render('index', {
+      title : 'Home',
       udata : req.session.user
     });
     }
@@ -86,9 +86,13 @@ app.post('/', function(req, res){
       } else{
         req.session.user = o;
     // update the user's login cookies if they exists //
-        if (req.cookies.user != undefined && req.cookies.pass != undefined){
-          res.cookie('user', o.user, { maxAge: 900000 });
-          res.cookie('pass', o.pass, { maxAge: 900000 }); 
+        if (req.cookies.user != undefined && req.cookies.pass != undefined) {
+          res.cookie('user', o.user, { 
+            maxAge: 900000 
+          });
+          res.cookie('pass', o.pass, { 
+            maxAge: 900000 
+          }); 
         }
         res.send('ok', 200);
       }
@@ -96,25 +100,25 @@ app.post('/', function(req, res){
   } else if (req.param('logout') == 'true'){
     res.clearCookie('user');
     res.clearCookie('pass');
-    req.session.destroy(function(e){ res.send('ok', 200); });
+    req.session.destroy(function(e) { 
+      res.send('ok', 200); 
+    });
   }
 });
 
 app.get('/signup', function(req, res) {
-  res.render('signup', {  title: 'Signup'});
+  res.render('signup');
 });
 
-app.post('/signup', function(req, res){
+app.post('/signup', function(req, res) {
   AM.addNewAccount({
     user  : req.param('user'),
     pass  : req.param('pass'),
-  }, function(e){
-    if (e){
+  }, function(e) {
+    if (e) {
       res.send(e, 400);
-      res.render('/signup');
-    } else{
+    } else {
       res.send('ok', 200);
-      res.render('/');
     }
   });
 });
