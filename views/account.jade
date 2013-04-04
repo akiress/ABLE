@@ -5,14 +5,17 @@
 input(type='hidden', value= user._id)#userId
 
 #account-form-container
-	form( method="post")#account-form
+	form#account-form(autocomplete='off', method='get', action='')
 		p.subheading Please enter a username and password. Username should be at least 3 characters and password at least 6 characters.
 		#user-cg
 			label Username
-			input#user-tf(type='text', name='user', value= user.user)
-		#pass-cg
+			input(type='text', name='user', value= user.user)
+		#pass-cg1
 			label Password
-			input#pass-tf(type='password', name='pass', value='')
+			input(type='password', name='pass', value='')
+		#pass-cg2
+			label Confirm Password
+			input(type='password', name='pass', value='')
 		#create-account-btn
 				button(type="submit")#btn-create
 					i.icon-lock.icon-white
