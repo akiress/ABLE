@@ -250,5 +250,72 @@ p {
 
 #test {
     text-align: left;
-    font-size: 0.8em;
+    font-size: 0.7em;
+}
+
+#results {
+    text-align: left;
+}
+
+#test_btn {
+    width: 15%;
+    padding: 5px;
+}
+
+.slide-block {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-img {
+    margin: 0 auto;
+}
+
+.contacts-block {
+    width: 90%;
+    margin: 0 auto;
+    padding:  0 2px;
+}
+
+.social-buttons {
+    width: 90%;
+    margin: -75px auto;
+    overflow: hidden;
+}
+
+.social-button {
+    float: left;
+    margin: 0 85px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    padding-top: 140px;
+    text-decoration: none;
+}
+
+.social-button span {
+    color:#efefef; 
+    font-size: 1em;
+    text-transform: uppercase;
+    display: none;
+}
+
+.social-button:hover {
+    background-position: center;
+}
+
+.social-button:hover span {
+    display: inline;
+}
+
+.mail-button {
+    background:url("/images/mail.png") no-repeat left;
+}
+
+.twitter-button {
+    background:url("/images/twitter.png") no-repeat left;
+}
+
+.facebook-button {
+    background:url("/images/facebook.png") no-repeat left;
 }

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
 	var AV = new AccountValid();
 	var response;
 
