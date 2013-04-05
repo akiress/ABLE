@@ -121,6 +121,8 @@ nav ul ul ul {
     left: 100%; top:0;
 }
 
+
+
 p {
     color: #cccccc;
     font-size: 1em;
@@ -255,6 +257,16 @@ p {
 
 #results {
     text-align: left;
+}
+
+#test ol li p {
+    text-align: center;
+    height: 30%;
+}
+
+#test ol li p.big_png {
+    text-align: center;
+    height: 60%;
 }
 
 #test_btn {

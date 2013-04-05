@@ -3,9 +3,9 @@ $(document).ready(function() {
   var correctAnswers = new Array();
   var actualAnswers = new Array();
 
-  correctAnswers = ['D', 'C', 'A', 'D', 'E', 'B', 'D', 'B', 'A', 'C',
-    'D', 'C', 'B', 'D', 'C', 'C', 'E', 'D', 'E', 'E',
-    'D', 'A', 'D', 'A', 'C', 'B', 'D', 'E', 'C', 'D'];
+  correctAnswers = ['D','C','A','D','E','B','D','B','A','C','D','C','B','D','C','C','E','D','E','E','D','A','D','C','C',
+  'B','D','E','C','D','A','E','B','E','C','C','A','E','B','C','C','A','B','A','A','C','C','E','B','E','D','A','C','E',
+  'A','A','B','C','E','B'];
 
   $('#test_btn.submit_btn').click(function() {
     var incorrect = null
@@ -35,6 +35,8 @@ $(document).ready(function() {
     return 'Z';
   }
 
+  // I use this function to make sure that every index as it passes through the for loop is given a value.
+  // Ordinarily, .push() could be used, but in my paranoia, I worry an index may get skipped for some reason.
   Array.prototype.insert = function (index, item) {
     this.splice(index, 0, item);
   };
@@ -48,29 +50,4 @@ $(document).ready(function() {
     }
     return correct;
   }
-
-  // function showsolution(){
-  //   var win2=window.open("","win2","width=200,height=350, scrollbars")
-  //   win2.focus()
-  //   win2.document.open()
-  //   win2.document.write('<title>Solution</title>')
-  //   win2.document.write('<body bgcolor="#FFFFFF">')
-  //   win2.document.write('<center><h3>Solution to Quiz</h3></center>')
-  //   win2.document.write('<center><font face="Arial">')
-  //   for (i=1;i<=totalQuestions;i++){
-  //     for (temp=0;temp<incorrect.length;temp++){
-  //       if (i==incorrect[temp])
-  //         wrong=1
-  //     }
-  //     if (wrong==1){
-  //       win2.document.write("Question "+i+"="+correctchoices[i].fontcolor("red")+"<br>")
-  //       wrong=0
-  //     }
-  //     else
-  //       win2.document.write("Question "+i+"="+correctchoices[i]+"<br>")
-  //   }
-  //   win2.document.write('</center></font>')
-  //   win2.document.write("<h5>Note: The solutions in red are the ones to the questions you had incorrectly answered.</h5>")
-  //   win2.document.close()
-  // }
 })
