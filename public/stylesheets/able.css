@@ -257,6 +257,14 @@ p {
 
 #results {
     text-align: left;
+    display: inline-block;
+}
+
+textarea {
+    resize: none;
+    font-size: 0.7em;
+    width: 40em;
+    border: 2px solid #000;
 }
 
 #test ol li p {
