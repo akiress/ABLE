@@ -2,12 +2,10 @@ extends layout
 
 append head
 	title ABLE Login
-	script(src='/javascripts/login.js')
-	script(src='/javascripts/loginValid.js')
 
 append content
 	#login-container
-		form( method="post")#login-form
+		form(autocomplete="off", method="post")#login-form
 			p.subheading Please Login To Your Account
 			#username
 				label Username 
@@ -25,4 +23,7 @@ append content
 	hr
 	#login-bottom
 		a(href='/signup')#create-account Create An Account
-	
+
+append scripts
+	script(src='/javascripts/login.js')
+	script(src='/javascripts/loginValid.js')

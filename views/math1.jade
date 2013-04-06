@@ -2,8 +2,6 @@ extends layout
 
 append head
      title ABLE ACT Math Test
-     script(src='/javascripts/math1.js')
-     script(src='/javascripts/jquery.autosize-min.js')
 
 append content
      div#results
@@ -1209,3 +1207,6 @@ append content
                          div(align="center")
                               input#test_btn.submit_btn(type='button', value='Submit', name='B1')
                               input#test_btn(type='button', value='Reset', name='B2', onClick='document.mathTest.reset()')
+append scripts
+     script(src='/javascripts/math1.js')
+     script(src='/javascripts/jquery.autosize-min.js')

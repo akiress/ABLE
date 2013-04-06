@@ -1,8 +1,8 @@
 var crypto 		= require('crypto')
 var MongoDB 	= require('mongodb').Db;
 var Server 		= require('mongodb').Server;
-// var moment 		= require('moment');
 
+var logState	= 0;
 var dbPort 		= 27017;
 var dbHost 		= 'localhost';
 var dbName 		= 'ABLE';
@@ -71,7 +71,7 @@ exports.updateAccount = function(newData, callback){
 	});
 }
 
-exports.updatePassword = function(email, newPass, callback) {
+/*exports.updatePassword = function(email, newPass, callback) {
 	accounts.findOne({email:email}, function(e, o){
 		if (e) {
 			callback(e, null);
@@ -82,7 +82,7 @@ exports.updatePassword = function(email, newPass, callback) {
 			});
 		}
 	});
-}
+}*/
 
 var generateSalt = function() {
 	var set = '0123456789abcdefghijklmnopqurstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ';
@@ -127,4 +127,6 @@ var findByMultipleFields = function(a, callback) {
 		if (e) callback(e)
 		else callback(null, results)
 	});
+
+
 }

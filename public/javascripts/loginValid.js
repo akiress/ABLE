@@ -1,48 +1,30 @@
 function LoginValid() {
-
+	console.log('LoginValid');
+	this.formFields = [$('#user-tf'), $('#pass-tf')];
+	this.controlGroups = [$('#user-cg'), $('#pass-cg')];
 }
 
-function AccountValid() {
-	this.formFields = [$('#user-tf'), $('#pass-tf'), $('#pass-tfc')];
-	this.controlGroups = [$('#user-cg'), $('#pass-cg'), $('#pass-cgc')];
-
-	this.validateName = function(data) {
-		return data.length >= 3;
-	}
-
-	this.validatePassword = function(data) {
-		if ($('userId').val() && data==='') {
-			return true;
-		} else {
-			return data.length >= 6;
-		}
-	}
-}
-
-AccountValid.prototype.showInvalidUserName = function () {
-	this.controlGroups[0].addClass('error');
-	window.alert('Invalid user name');
-}
-
-AccountValid.prototype.validateForm = function() {
+LoginValid.prototype.validateForm = function() {
+	console.log('validateForm');
 	var e = [];
-	for (var i=0; i < this.controlGroups.length; i++) this.controlGroups[i].removeClass('error');
-	if (this.validateName(this.formFields[0].val()) == false) {
-		e.push('Please enter a username of at least 3 characters.');
-	}
+	for (var i = 0; i < this.controlGroups.length; i++) this.controlGroups[i].removeClass('error');
+	if ($('#user_tf').val() == '') {
+		console.log('UserName err');
+		e.push('Enter a username');
+	} 
 
-	if (this.validatePassword(this.formFields[1].val()) == false) {
-		e.push('Password should be at least 6 characters.');
-	}
-
-	if (this.validatePassword(this.formFields[2].val()) == false) {
-		e.push('Password should be at least 6 characters.');
-	}
-
-	if (this.formFields[1].val() !== this.formFields[2].val() ) {
-		e.push('Passwords do not match.');
+	if ($('#pass_tf').val() == '') {
+		console.log('Password err');
+		e.push('Enter a password');
 	}
 
 	if (e.length) alert(e);
+	$('#login-form').get(0).reset();
+
 	return e.length === 0;
+}
+
+LoginValid.prototype.showLoginError = function () {
+	this.controlGroups[0].addClass('error');
+	window.alert('Please check your username and/or password');
 }

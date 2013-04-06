@@ -3,6 +3,7 @@ var routes = require('./routes')
 var http = require('http')
 var path = require('path');
 var app = express();
+var sys = require('sys');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 8080);
@@ -22,7 +23,7 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', routes.index);
+app.get('/', routes.home);
 app.get('/about', routes.about);
 app.get('/search', routes.search);
 app.get('/games', routes.games);
@@ -33,11 +34,9 @@ app.get('/math1', routes.math1);
 var AM = require('./modules/accountsDB');
 
 app.get('/login', function(req, res){
-// check if the user's credentials are saved in a cookie //
   if (req.cookies.user == undefined || req.cookies.pass == undefined){
     res.render('login', { title: 'Hello - Please Login To Your Account' });
   } else{
-// attempt automatic login //
     AM.autoLogin(req.cookies.user, req.cookies.pass, function(o){
       if (o != null){
           req.session.user = o;

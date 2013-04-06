@@ -35,20 +35,20 @@ h1 {
     clear: both
 }	
 
-nav {
+#able_menu {
     margin: -20px auto; 
     text-align: center;
 }
 
-nav ul ul {
+#able_menu ul ul {
     display: none;
 }
 
-nav ul li:hover > ul {
+#able_menu ul li:hover > ul {
     display: block;
 }
 
-nav ul {
+#able_menu ul {
     background: #efefef; 
     background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
     background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
@@ -61,28 +61,28 @@ nav ul {
     display: inline-table;
 }
 
-nav ul:after {
+#able_menu ul:after {
     content: "";
     clear: both;
     display: block;
 }
 
-nav ul li {
+#able_menu ul li {
     float: left;
 }
 
-nav ul li:hover {
+#able_menu ul li:hover {
     background: #4b545f;
     background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
     background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
     background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);
 }
 
-nav ul li:hover a {
+#able_menu ul li:hover a {
     color: #fff;
 }
 
-nav ul li a {
+#able_menu ul li a {
     display: block;
     padding: 15px 40px;
     color: #757575;
@@ -90,8 +90,7 @@ nav ul li a {
     font-size: .8em;
 }
 
-
-nav ul ul {
+#able_menu ul ul {
     background: #5f6975;
     border-radius: 0px;
     padding: 0;
@@ -99,40 +98,135 @@ nav ul ul {
     top: 100%;
 }
 
-nav ul ul li {
+#able_menu ul ul li {
     float: none; 
     border-top: 1px solid #6b727c;
     border-bottom: 1px solid #575f6a;
     position: relative;
 }
 
-nav ul ul li a {
+#able_menu ul ul li a {
     padding: 15px 40px;
     color: #fff;
     font-size: .6em;
 }
 
-nav ul ul li a:hover {
+#able_menu ul ul li a:hover {
     background: #4b545f;
 }
 
-nav ul ul ul {
+#able_menu ul ul ul {
     position: absolute;
     left: 100%; top:0;
 }
 
-
-
-p {
-    color: #cccccc;
-    font-size: 1em;
-}
-
-#about {
+p.index_p,
+p.about {
     text-align: justify;
     text-justify: inter-word;
     font-size: .85em;
     color: hsla(180,100%,97%,1);
+    margin: 5% auto;
+}
+
+p.aboutheaders {
+    margin: 5% auto 0;
+    color: hsla(180,100%,97%,1);
+    font-size: 1.25em;
+}
+
+#test {
+    text-align: left;
+    font-size: 0.7em;
+}
+
+#results {
+    text-align: left;
+    display: inline-block;
+}
+
+textarea {
+    resize: none;
+    font-size: 0.7em;
+    width: 40em;
+    border: 2px solid #000;
+}
+
+#test ol li p {
+    text-align: center;
+    height: 30%;
+}
+
+#test ol li p.big_png {
+    text-align: center;
+    height: 60%;
+}
+
+#test_btn {
+    width: 15%;
+    padding: 5px;
+}
+
+.slide-block {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-img {
+    margin: 0 auto;
+}
+
+.contacts-block {
+    width: 90%;
+    margin: 0 auto;
+    padding:  0 2px;
+}
+
+.social-buttons {
+    width: 90%;
+    margin: -75px auto;
+    overflow: hidden;
+}
+
+.social-button {
+    float: left;
+    margin: 0 85px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    padding-top: 140px;
+    text-decoration: none;
+}
+
+.social-button span {
+    color:#efefef; 
+    font-size: 1em;
+    text-transform: uppercase;
+    display: none;
+}
+
+.social-button:hover {
+    background-position: center;
+}
+
+.social-button:hover span {
+    display: inline;
+}
+
+.mail-button {
+    background:url("/images/mail.png") no-repeat left;
+}
+
+.twitter-button {
+    background:url("/images/twitter.png") no-repeat left;
+}
+
+.facebook-button {
+    background:url("/images/facebook.png") no-repeat left;
+}
+
+.center {
+    text-align: center;
 }
 
 #login-container {
@@ -250,92 +344,9 @@ p {
     padding: 5px;
 }
 
-#test {
-    text-align: left;
-    font-size: 0.7em;
-}
-
-#results {
-    text-align: left;
-    display: inline-block;
-}
-
-textarea {
-    resize: none;
-    font-size: 0.7em;
-    width: 40em;
-    border: 2px solid #000;
-}
-
-#test ol li p {
-    text-align: center;
-    height: 30%;
-}
-
-#test ol li p.big_png {
-    text-align: center;
-    height: 60%;
-}
-
-#test_btn {
-    width: 15%;
-    padding: 5px;
-}
-
-.slide-block {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.contact-img {
-    margin: 0 auto;
-}
-
-.contacts-block {
-    width: 90%;
-    margin: 0 auto;
-    padding:  0 2px;
-}
-
-.social-buttons {
-    width: 90%;
-    margin: -75px auto;
-    overflow: hidden;
-}
-
-.social-button {
-    float: left;
-    margin: 0 85px;
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    padding-top: 140px;
-    text-decoration: none;
-}
-
-.social-button span {
-    color:#efefef; 
-    font-size: 1em;
-    text-transform: uppercase;
-    display: none;
-}
-
-.social-button:hover {
-    background-position: center;
-}
-
-.social-button:hover span {
-    display: inline;
-}
-
-.mail-button {
-    background:url("/images/mail.png") no-repeat left;
-}
-
-.twitter-button {
-    background:url("/images/twitter.png") no-repeat left;
-}
-
-.facebook-button {
-    background:url("/images/facebook.png") no-repeat left;
+#btn-logout {
+    width: 5%;
+    top: 0.2%;
+    right: 1%;
+    position: absolute;
 }

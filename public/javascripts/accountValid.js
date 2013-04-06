@@ -40,5 +40,7 @@ AccountValid.prototype.validateForm = function() {
 	}
 
 	if (e.length) alert(e);
+	$('#account-form').get(0).reset();
+
 	return e.length === 0;
 }
