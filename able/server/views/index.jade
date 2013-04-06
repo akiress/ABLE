@@ -1,0 +1,20 @@
+extends layout
+
+append head
+	title ABLE Home
+
+append content
+	p.index_p
+		| Applications for Basic Learning and Education (ABLE) is a web-based collection of interactive educational
+		| programs that provide engaging and entertaining ways to supplement learning outside of the classroom.
+	p.index_p
+		| Educational institutions, extracurricular tutoring organizations, and involved parents are constantly
+		| searching for new ways to assist learning and reviewing material beyond the restraints of regular school hours.
+		| This search is made far more difficult by students’ reluctance to participate in activities that they perceive
+		| as being tedious or overly time-consuming.
+
+	include modals/alert
+	include modals/confirm
+
+block scripts
+	script(src='/javascripts/home.js')

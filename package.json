@@ -1,0 +1,19 @@
+{
+  "name": "ABLE",
+  "description": "ABLE - CSC 3380 project.",
+  "version": "0.0.01",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "start": "node server"
+  },
+  "dependencies": {
+    "express": "3.x",
+    "jade": "*",
+    "mongodb": "1.x",
+    "stylus": "0.x",
+    "emailjs": "0.x",
+    "moment": "2.x"
+  }
+}
