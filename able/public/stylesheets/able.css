@@ -43,7 +43,7 @@ h1 {
 }	
 
 #able_menu {
-    margin: -20px auto; 
+    margin: 4% auto; 
     text-align: center;
 }
 
@@ -142,6 +142,11 @@ p.aboutheaders {
     font-size: 1.25em;
 }
 
+p.footer-content {
+    margin: 10% auto;
+    font-size: 1em;
+}
+
 #test {
     text-align: left;
     font-size: 0.7em;
@@ -221,17 +226,26 @@ textarea {
 }
 
 .mail-button {
-    background:url("/images/mail.png") no-repeat left;
+    background:url("/images/social/mail.png") no-repeat left;
 }
 
 .twitter-button {
-    background:url("/images/twitter.png") no-repeat left;
+    background:url("/images/social/twitter.png") no-repeat left;
 }
 
 .facebook-button {
-    background:url("/images/facebook.png") no-repeat left;
+    background:url("/images/social/facebook.png") no-repeat left;
 }
 
 .center {
     text-align: center;
+}
+
+/*Counteract bootstrap.min.css*/
+p, body, li {
+    line-height: normal;
+}
+
+ul, ol {
+    margin: 0 auto;
 }
