@@ -5,7 +5,11 @@ $(document).ready(function () {
 		$('ul', this).stop().slideUp(100);
 	});
 
-	$.ajax
+	$.get('/', function(req,res) {
+		console.log(req.session);
+		console.log(res);
+	})
+	
 	$('#btn-logout').hide();
 
 	function attemptLogout() {

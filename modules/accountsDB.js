@@ -71,19 +71,6 @@ exports.updateAccount = function(newData, callback){
 	});
 }
 
-/*exports.updatePassword = function(email, newPass, callback) {
-	accounts.findOne({email:email}, function(e, o){
-		if (e) {
-			callback(e, null);
-		} else {
-			saltAndHash(newPass, function(hash){
-		        o.pass = hash;
-		        accounts.save(o, {safe: true}, callback);
-			});
-		}
-	});
-}*/
-
 var generateSalt = function() {
 	var set = '0123456789abcdefghijklmnopqurstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ';
 	var salt = '';
@@ -121,12 +108,9 @@ var findById = function(id, callback) {
 };
 
 var findByMultipleFields = function(a, callback) {
-// this takes an array of name/val pairs to search against {fieldName : 'value'} //
 	accounts.find( { $or : a } ).toArray(
 		function(e, results) {
 		if (e) callback(e)
 		else callback(null, results)
 	});
-
-
 }

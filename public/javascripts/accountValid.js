@@ -1,6 +1,6 @@
 function AccountValid(){
-	this.formFields = [$('#user-tf'), $('#pass-tf'), $('#pass-tfc')];
-	this.controlGroups = [$('#user-cg'), $('#pass-cg'), $('#pass-cgc')];
+	this.formFields = [$('#user-tf'), $('#pass-tf')];
+	this.controlGroups = [$('#user-cg'), $('#pass-cg')];
 
 	this.validateName = function(data) {
 		return data.length >= 3;
@@ -29,14 +29,6 @@ AccountValid.prototype.validateForm = function() {
 
 	if (this.validatePassword(this.formFields[1].val()) == false) {
 		e.push('Password should be at least 6 characters.');
-	}
-
-	if (this.validatePassword(this.formFields[2].val()) == false) {
-		e.push('Password should be at least 6 characters.');
-	}
-
-	if (this.formFields[1].val() !== this.formFields[2].val() ) {
-		e.push('Passwords do not match.');
 	}
 
 	if (e.length) alert(e);

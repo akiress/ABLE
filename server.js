@@ -48,11 +48,13 @@ app.get('/login', function(req, res){
   }
 });
 
-app.post('/login', function(req, res){
-  AM.manualLogin(req.param('user'), req.param('pass'), function(e, o){
-    if (!o){
+app.post('/login', function(req, res) {
+  sys.puts(req);
+  sys.puts(res);
+  AM.manualLogin(req.param('user'), req.param('pass'), function(e, o) {
+    if (!o) {
       res.send(e, 400);
-    } else{
+    } else {
         req.session.user = o;
       if (req.param('remember-me') == 'true'){
         res.cookie('user', o.user, { maxAge: 900000 });
@@ -74,29 +76,24 @@ app.get('/', function(req, res) {
     }
 });
 
-app.post('/', function(req, res){
+app.post('/', function(req, res) {
   if (req.param('user') != undefined) {
     AM.updateAccount({
-      user    : req.param('user'),
-      pass    : req.param('pass')
-    }, function(e, o){
-      if (e){
+      user : req.param('user'),
+      pass : req.param('pass')
+    }, function(e, o) {
+      if (e) {
         res.send('error-updating-account', 400);
-      } else{
+      } else {
         req.session.user = o;
-    // update the user's login cookies if they exists //
         if (req.cookies.user != undefined && req.cookies.pass != undefined) {
-          res.cookie('user', o.user, { 
-            maxAge: 900000 
-          });
-          res.cookie('pass', o.pass, { 
-            maxAge: 900000 
-          }); 
+          res.cookie('user', o.user, { maxAge: 900000});
+          res.cookie('pass', o.pass, { maxAge: 900000}); 
         }
         res.send('ok', 200);
       }
     });
-  } else if (req.param('logout') == 'true'){
+  } else if (req.param('logout') == 'true') {
     res.clearCookie('user');
     res.clearCookie('pass');
     req.session.destroy(function(e) { 
