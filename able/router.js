@@ -131,17 +131,9 @@ module.exports = function(app) {
 		})
 	});
 
-	app.get('/index', function(req, res) {
-	  res.render('index', { title: 'Home' });
-	});
-
-	app.get('/about', function(req, res) {
-		res.render('about.html', { title : 'About'})
+	app.use('/about', function(req, res) {
+		res.render('about', { title : 'About'})
 	})
-
-	app.get('/search', function(req, res) {
-		res.render('search', { title: 'Search' });
-	});
 
 	app.get('/games', function(req, res) {
 	  res.render('games', { title: 'Games' });
@@ -155,5 +147,13 @@ module.exports = function(app) {
 	  res.render('math1', { title: 'Math1' });
 	});
 
-	// app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
+	app.get('/index', function(req, res) {
+	  res.render('index', { title: 'Home' });
+	});
+
+	app.get('/search', function(req, res) {
+		res.render('search', { title: 'Search' });
+	});
+
+	app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
 };
