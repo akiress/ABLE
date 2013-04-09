@@ -1,12 +1,16 @@
 $(document).ready(function() {
   var totalQuestions = 60;
-  var correctAnswers = new Array();
   var actualAnswers = new Array();
   var questionsWrong = new Array();
-
-  correctAnswers = ['D','C','A','D','E','B','D','B','A','C','D','C','B','D','C','C','E','D','E','E','D','A','D','C','C',
+  
+  var correctAnswers = ['D','C','A','D','E','B','D','B','A','C','D','C','B','D','C','C','E','D','E','E','D','A','D','C','C',
   'B','D','E','C','D','A','E','B','E','C','C','A','E','B','C','C','A','B','A','A','C','C','E','B','E','D','A','C','E',
   'A','A','B','C','E','B'];
+
+  var prealgebra = [
+  ];
+
+  prealgebra = 
 
   $('#test_btn.submit_btn').click(function() {
     var incorrect = null

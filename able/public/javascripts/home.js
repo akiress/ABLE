@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var HC = new HomeController();
-	var AV = new AccountValidator();
+	//var AV = new AccountValidator();
 	
 	function HomeController() {
 		var that = this;

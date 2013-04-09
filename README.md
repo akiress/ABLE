@@ -37,7 +37,7 @@ Start MongoDB first. Open up a command prompt and traverse to the root directory
 mongod.exe  --dbpath exact-path-to-the-database</pre>
 
 Then start the server, traverse to the ABLE folder and type:
-<pre>node able</pre>
+<pre>node server</pre>
 
 In browser, go to localhost:8080
 
@@ -50,3 +50,11 @@ Open a command prompt and traverse to the MongoDB installation folder.
 
 If any collections were listed, you can see the contents of those by
 <pre>db.name-of-collection.find()</pre>
+
+## Sample usernames and passwords for the site ##
+apples123 - apples123
+bats123 - bats123
+cats123 - cats123
+dogs123 - dogs123
+eyes123 - eyes123
+frogs123 - frogs123

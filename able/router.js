@@ -2,8 +2,6 @@ var AM = require('./modules/account-manager');
 var EM = require('./modules/email-dispatcher');
 
 module.exports = function(app) {
-
-// main login page //
 	app.get('/', function(req, res){
 		if (req.cookies.user == undefined || req.cookies.pass == undefined){
 			res.render('login', { title: 'Login' });
@@ -33,7 +31,6 @@ module.exports = function(app) {
 		});
 	});
 	
-// logged-in user homepage //
 	app.get('/home', function(req, res) {
 	    if (req.session.user == null){
 	        res.redirect('/');
@@ -58,8 +55,8 @@ module.exports = function(app) {
 				}	else {
 					req.session.user = o;
 					if (req.cookies.user != undefined && req.cookies.pass != undefined){
-						res.cookie('user', o.user, { maxAge: 900000 });
-						res.cookie('pass', o.pass, { maxAge: 900000 });	
+						res.cookie('user', o.user, { maxAge: 1000 });
+						res.cookie('pass', o.pass, { maxAge: 1000 });	
 					}
 					res.send('ok', 200);
 				}
@@ -138,6 +135,10 @@ module.exports = function(app) {
 	  res.render('index', { title: 'Home' });
 	});
 
+	app.get('/about', function(req, res) {
+		res.render('about.html', { title : 'About'})
+	})
+
 	app.get('/search', function(req, res) {
 		res.render('search', { title: 'Search' });
 	});
@@ -146,18 +147,13 @@ module.exports = function(app) {
 	  res.render('games', { title: 'Games' });
 	});
 
-	exports.about = function(req, res) {
-		res.render('about', { title: 'About'});
-	}
+	app.get('/act', function(req, res) {
+	  res.render('act', { title: 'ACT' });
+	});
 
-	exports.act = function(req, res){
-	  res.render('act', 
-	  	{ title: 'ACT' });
-	};
+	app.get('/math1', function(req, res) {
+	  res.render('math1', { title: 'Math1' });
+	});
 
-	exports.math1 = function(req, res){
-	  res.render('math1',
-	    { title: 'Math1' });
-	};
-	app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
+	// app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
 };

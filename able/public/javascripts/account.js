@@ -2,7 +2,7 @@ $(document).ready(function() {
 	var AV = new AccountValidator();
 	var SC = new SignupController();
 	
-	function AccountValidator(){
+	function AccountValidator() {
 		this.formFields = [$('#name-tf'), $('#email-tf'), $('#user-tf'), $('#pass-tf')];
 		this.controlGroups = [$('#name-cg'), $('#email-cg'), $('#user-cg'), $('#pass-cg')];	
 		this.alert = $('.modal-form-errors');
