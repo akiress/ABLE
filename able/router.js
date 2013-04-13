@@ -2,6 +2,32 @@ var AM = require('./modules/account-manager');
 var EM = require('./modules/email-dispatcher');
 
 module.exports = function(app) {
+	app.get('/games', function(req, res) {
+	  res.render('games', 
+	  	{ title: 'Games' });
+	});
+
+	app.get('/act', function(req, res) {
+	  res.render('act', 
+	  	{ title: 'ACT' });
+	});
+
+	app.get('/math1', function(req, res) {
+	  res.render('math1', 
+	  	{ title: 'Math1' });
+	});
+
+	app.get('/search', function(req, res) {
+		console.log('GET Search')
+		res.render('search', 
+			{ title: 'Search' });
+	});
+
+	// app.get('*', function(req, res) { 
+	// 	res.render('404', 
+	// 		{ title: 'Page Not Found'}); 
+	// });
+
 	app.get('/', function(req, res){
 		if (req.cookies.user == undefined || req.cookies.pass == undefined){
 			res.render('login', { title: 'Login' });
@@ -36,7 +62,7 @@ module.exports = function(app) {
 	        res.redirect('/');
 	    } else {
 			res.render('home', {
-				title : 'Control Panel',
+				title : 'Home',
 				udata : req.session.user
 			});
 	    }
@@ -131,29 +157,16 @@ module.exports = function(app) {
 		})
 	});
 
-	app.use('/about', function(req, res) {
-		res.render('about', { title : 'About'})
+	app.get('/aboutable', function(req, res) {
+		if (req.session.user == null){
+	        res.redirect('/');
+	        console.log('Redirecting');
+	    } else {
+			res.render('aboutable', {
+				title : 'About',
+				udata : req.session.user
+				console.log('In about');
+			});
+	    }
 	})
-
-	app.get('/games', function(req, res) {
-	  res.render('games', { title: 'Games' });
-	});
-
-	app.get('/act', function(req, res) {
-	  res.render('act', { title: 'ACT' });
-	});
-
-	app.get('/math1', function(req, res) {
-	  res.render('math1', { title: 'Math1' });
-	});
-
-	app.get('/index', function(req, res) {
-	  res.render('index', { title: 'Home' });
-	});
-
-	app.get('/search', function(req, res) {
-		res.render('search', { title: 'Search' });
-	});
-
-	app.get('*', function(req, res) { res.render('404', { title: 'Page Not Found'}); });
 };
