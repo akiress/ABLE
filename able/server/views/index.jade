@@ -1,6 +1,6 @@
 extends layout
 
-append head
+prepend head
 	title ABLE Home
 
 append content
@@ -17,4 +17,4 @@ append content
 	include modals/confirm
 
 block scripts
-	script(src='/javascripts/home.js')
+	script(src='/javascripts/home.js', type='application/javascript')

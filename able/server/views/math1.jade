@@ -1,7 +1,10 @@
 extends layout
 
-append head
+prepend head
      title ABLE ACT Math Test
+append head
+     link(href='/stylesheets/math.css', rel='stylesheet', type='text/css')
+
 
 append content
      div#results
@@ -292,7 +295,7 @@ append content
                     li
                          | The length of sides AB and AC in the triangle below are equal. What is the measure of angle ∠ A?
                          p
-                              img(src='/images/math_15.png')
+                              img(src='/images/math/math_15.png')
                          input(type='radio', name='q15', value='A')
                          | A) 70°
                          br
@@ -311,7 +314,7 @@ append content
                     li
                          | In the figure below ABC is an equilateral triangle. AH is perpendicular to BC and has a length of 2√3 inches. What is the area, in square inches, of triangle Δ ABC.
                          p
-                              img(src='/images/math_16.png')
+                              img(src='/images/math/math_16.png')
                          input(type='radio', name='q16', value='A')
                          | A) 12
                          br
@@ -438,7 +441,7 @@ append content
                     li
                          | In the right triangle ABC below, what is the cosine of angle A?
                          p
-                              img(src='images/math_23.png')
+                              img(src='images/math/math_23.png')
                          input(type='radio', name='q23', value='A')
                          | A) 3/4
                          br
@@ -457,10 +460,10 @@ append content
                     li
                          | The graph of y = 2/(x - 3) is shown below
                          p
-                              img(src='images/math_24_q.png')
+                              img(src='images/math/math_24_q.png')
                          | Among the following, which is the best possible graphical representation of y = -2/|x - 3|
                          p.big_png
-                              img(src='images/math_24_a.png')
+                              img(src='images/math/math_24_a.png')
                          br
                          input(type='radio', name='q24', value='A')
                          | A)
@@ -501,7 +504,7 @@ append content
                          span(style='text-decoration: overline;') AD
                          | , ∠ BAC and ∠ ACB measure 26° and 131° respectively. What is the measure of ∠CBD?
                          p
-                              img(src='images/math_26.png')
+                              img(src='images/math/math_26.png')
                          input(type='radio', name='q26', value='A')
                          | A) 26°
                          br
@@ -575,7 +578,7 @@ append content
                     li
                          | All axes in the graphs below have the same scales. Which one of the graphs shows the graph of y = -2x + 2?
                          p
-                              img(src='images/math_26.png')
+                              img(src='images/math/math_26.png')
                          input(type='radio', name='q30', value='A')
                          | A)
                          br
@@ -865,7 +868,7 @@ append content
                     li
                          | The measures of the sides of the right triangle below are in inches. What is the value of x?
                          p(align='center')
-                              img(src='/images/math_45.png')
+                              img(src='/images/math/math_45.png')
                          br
                          input(type='radio', name='q45', value='A')
                          | A) 1/√3
@@ -885,7 +888,7 @@ append content
                     li
                          | Which of the graphs below is the solution set of -3x ≤ 12
                          p(align='center')
-                              img(src='/images/math_46.png')
+                              img(src='/images/math/math_46.png')
                          input(type='radio', name='q46', value='A')
                          | A)
                          br
@@ -996,7 +999,7 @@ append content
                     li
                          | The total surface area of all six sides of the rectangular box below is equal to 128 square inches. What is x in inches?
                          p(align='center')
-                              img(src='/images/math_52.png')
+                              img(src='/images/math/math_52.png')
                          br
                          input(type='radio', name='q52', value='A')
                          | A) 6
@@ -1034,7 +1037,7 @@ append content
                     li
                          | The lengths in the rectangle below are in inches. What is the shaded area in square inches?
                          p(align='center')
-                              img(src='/images/math_54.png')
+                              img(src='/images/math/math_54.png')
                          br
                          input(type='radio', name='q54', value='A')
                          | A) 70
@@ -1058,7 +1061,7 @@ append content
                          span(style='text-decoration: overline;') AC
                          | ?
                          p
-                              img(src='/images/math_55.png')
+                              img(src='/images/math/math_55.png')
                          br
                          input(type='radio', name='q55', value='A')
                          | A) 20√3
@@ -1080,7 +1083,7 @@ append content
                          span(style='text-decoration: overline;') AC 
                          | ?
                          p(align='center')
-                              img(src='/images/math_56.png')
+                              img(src='/images/math/math_56.png')
                          br
                          input(type='radio', name='q56', value='A')
                          | A) 10√3
@@ -1124,7 +1127,7 @@ append content
                          span(style='text-decoration: overline;') BD
                          | ?
                          p(align='center')
-                              img(src='/images/math_58.png')
+                              img(src='/images/math/math_58.png')
                          br
                          input(type='radio', name='q58', value='A')
                          | A) 3
@@ -1208,5 +1211,5 @@ append content
                               input#test_btn.submit_btn(type='button', value='Submit', name='B1')
                               input#test_btn(type='button', value='Reset', name='B2', onClick='document.mathTest.reset()')
 append scripts
-     script(src='/javascripts/math1.js')
-     script(src='/javascripts/jquery.autosize-min.js')
+     script(src='/javascripts/math1.js', type='application/javascript')
+     script(src='/javascripts/jquery.autosize-min.js', type='application/javascript')

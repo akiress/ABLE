@@ -1,6 +1,6 @@
 extends layout
 
-append head
+prepend head
 	title ABLE Search
 
 append content
@@ -9,4 +9,4 @@ append content
 			input#searchme(type='text', placeholder='Subject of interest', size='50')
 			input(type='submit', onclick='searchIndex(); return false;')
 		#resultshere
-	script(src='/javascripts/searchindex.js')
+	script(src='/javascripts/searchindex.js', type='application/javascript')
