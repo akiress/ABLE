@@ -54,7 +54,3 @@ If any collections were listed, you can see the contents of those by
 ## Sample usernames and passwords for the site ##
 apples123 - apples123
 bats123 - bats123
-cats123 - cats123
-dogs123 - dogs123
-eyes123 - eyes123
-frogs123 - frogs123

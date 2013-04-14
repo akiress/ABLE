@@ -171,13 +171,113 @@ module.exports = function(app) {
     }
   });
 
+  app.get('/mathtips', function(req, res) {
+    if (req.session.user == null){
+      res.redirect('/');
+    } else {
+      res.render('mathtips', {
+        title : 'Math Tips',
+        udata : req.session.user
+      });
+    }
+  });
+
+  app.get('/mathtuts', function(req, res) {
+    if (req.session.user == null){
+      res.redirect('/');
+    } else {
+      res.render('mathtuts', {
+        title : 'Math Tutorials',
+        udata : req.session.user
+      });
+    }
+  });
+
+  app.get('/scitips', function(req, res) {
+    if (req.session.user == null){
+      res.redirect('/');
+    } else {
+      res.render('scitips', {
+        title : 'Science Tips',
+        udata : req.session.user
+      });
+    }
+  });
+
+  app.get('/scituts', function(req, res) {
+    if (req.session.user == null){
+      res.redirect('/');
+    } else {
+      res.render('scituts', {
+        title : 'Science Tutorials',
+        udata : req.session.user
+      });
+    }
+  });
+
+  app.get('/readtips', function(req, res) {
+    if (req.session.user == null){
+      res.redirect('/');
+    } else {
+      res.render('readtips', {
+        title : 'Reading Tips',
+        udata : req.session.user
+      });
+    }
+  });
+
+  app.get('/readtuts', function(req, res) {
+    if (req.session.user == null){
+      res.redirect('/');
+    } else {
+      res.render('readtuts', {
+        title : 'Reading Tutorials',
+        udata : req.session.user
+      });
+    }
+  });
+
+  app.get('/esstips', function(req, res) {
+    if (req.session.user == null){
+      res.redirect('/');
+    } else {
+      res.render('esstips', {
+        title : 'Essay Tips',
+        udata : req.session.user
+      });
+    }
+  });
+
+  app.get('/esstuts', function(req, res) {
+    if (req.session.user == null){
+      res.redirect('/');
+    } else {
+      res.render('esstuts', {
+        title : 'Essay Tutorials',
+        udata : req.session.user
+      });
+    }
+  });
+
   app.get('/math1', function(req, res) {
-    res.render('math1', 
-               { title: 'Math1' });
+    if (req.session.user == null){
+      res.redirect('/');
+    } else {
+      res.render('math1', {
+        title : 'Math ACT Prep Test',
+        udata : req.session.user
+      });
+    }
   });
 
   app.get('/search', function(req, res) {
-    res.render('search', 
-               { title: 'Search' });
+    if (req.session.user == null){
+      res.redirect('/');
+    } else {
+      res.render('search', {
+        title : 'Search',
+        udata : req.session.user
+      });
+    }
   });
 };
