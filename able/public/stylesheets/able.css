@@ -147,6 +147,14 @@ p.footer-content {
     font-size: 1em;
 }
 
+p.tuts {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: .75em;
+    color: hsla(180,100%,97%,1);
+    margin: 5% auto;
+}
+
 #test {
     text-align: left;
     font-size: 0.7em;
@@ -211,7 +219,7 @@ textarea {
 }
 
 .social-button span {
-    color:#efefef; 
+    color: #efefef; 
     font-size: 1em;
     text-transform: uppercase;
     display: none;
@@ -239,6 +247,22 @@ textarea {
 
 .center {
     text-align: center;
+}
+
+ul.tips {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: .75em;
+    color: hsla(180,100%,97%,1);
+    margin: 1% auto;
+}
+
+ul.tips_inner {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: .75em;
+    color: hsla(180,100%,97%,1);
+    margin: 1% 10%;
 }
 
 /*Counteract bootstrap.min.css*/

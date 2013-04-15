@@ -163,10 +163,6 @@ module.exports = function(app) {
     }
   });
 
-  app.get('*', function(req, res) { 
-    res.render('404', { title: 'Page Not Found'}); 
-  });
-
   app.get('/gentips', function(req, res) {
     if (req.session.user == null){
       res.redirect('/');
@@ -297,5 +293,9 @@ module.exports = function(app) {
         udata : req.session.user
       });
     }
+  });
+
+  app.get('*', function(req, res) { 
+    res.render('404', { title: 'Page Not Found'}); 
   });
 };
