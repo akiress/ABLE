@@ -3,7 +3,7 @@ extends layout
 prepend head
     title ABLE About
     
-block content
+append content
     div
         div
             p.aboutheaders Vision
@@ -48,6 +48,3 @@ block content
                 | We develop our software using free and open source technologies to minimize the cost of production.
                 | Additional profit will be gained upon completion of the project by making certain features only available to
                 | users who have memberships or through donations.
-
-      include modals/alert
-      include modals/confirm

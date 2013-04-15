@@ -23,12 +23,11 @@ block content
 			div.btm-links
 				a(href='#')#forgot-password Forgot Your Password?
 				a(href='/signup')#create-account Create An Account
-block foot
 
+block foot
 	include modals/alert
 	include modals/lost-password
 
 append scripts
-	script(src='/javascripts/account.js', type='application/javascript')
 	script(src='/javascripts/email.js', type='application/javascript')
 	script(src='/javascripts/login.js', type='application/javascript')

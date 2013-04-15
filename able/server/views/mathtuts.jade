@@ -3,7 +3,33 @@ extends layout
 prepend head
 	title ABLE Math Tutorials
 
-block content
-	include modals/alert
-	include modals/confirm
-	
+append content
+	div
+		p
+			| A car averages 27 miles per gallon. If gas $4.04 per gallon, which of the following is the closest to how much the gas would cost for this car to travel 2,727 typical miles.
+			| A) $44.44
+			| B) $109.08
+			| C) $118.80
+			| D) $408.04
+			| E) $444.40
+
+			| To solve this question correctly, you will first need to take the total number of miles 
+			b 
+			i (2,727)
+				| To answer this question correctly you will first need to take the total number of miles
+				b
+				    i (2,727)
+				| and
+				strong
+				    | divide
+				    strong
+				      | it by the number of miles per gallon
+				      b
+				        i (27)
+				      | to obtain the number of gallons necessary to travel the entire distance. Next you will need to
+				      strong multiply
+				      | the number of gallons by the cost per gallon to obtain a final answer. Try it out.
+			br
+			| 2,727(total miles) ÷ 27(miles per gallon)= 101(number of gallons needed)
+			br
+			| 101(number of gallons needed) * $4.04(cost per gallon) = $408.04 (total cost of gas)
