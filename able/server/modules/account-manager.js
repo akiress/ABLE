@@ -70,9 +70,9 @@ exports.addNewAccount = function(newData, callback)
 exports.updateAccount = function(newData, callback)
 {
 	accounts.findOne({user:newData.user}, function(e, o){
-		o.name 		= newData.name;
-		o.email 	= newData.email;
-		o.country 	= newData.country;
+		o.name 			= newData.name;
+		o.email 		= newData.email;
+		o.mathscores 	= newData.mathscores;
 		if (newData.pass == ''){
 			accounts.save(o, {safe: true}, callback);
 		}	else{
@@ -82,6 +82,21 @@ exports.updateAccount = function(newData, callback)
 			});
 		}
 	});
+}
+
+exports.addMathScore = function(req, res) {
+    var mathscores = req.body;
+    console.log('Adding mathscores: ' + JSON.stringify(mathscores));
+    db.collection('mathscoress', function(err, collection) {
+        collection.insert(mathscores, {safe:true}, function(err, result) {
+            if (err) {
+                res.send({'error':'An error has occurred'});
+            } else {
+                console.log('Success: ' + JSON.stringify(result[0]));
+                res.send(result[0]);
+            }
+        });
+    });
 }
 
 exports.updatePassword = function(email, newPass, callback)

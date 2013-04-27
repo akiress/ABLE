@@ -19,7 +19,9 @@ $(document).ready(function() {
       actualAnswers.insert(i, ans);
     }
     var amountCorrect = compareAnswers();
-    printResults(amountCorrect);
+    var percentage = amountCorrect / totalQuestions;
+    var score = Math.round(percentage * 36);
+    printResults(amountCorrect, score);
     scrollTo(0,0);
   });
 
@@ -52,10 +54,12 @@ $(document).ready(function() {
     return correct;
   }
 
-  function printResults(s) {
+  function printResults(a, s) {
     $('#results').html('');
-    var percentage = s / totalQuestions;
+    var percentage = a / totalQuestions;
     var score = Math.round(percentage * 36);
+    $.get('/math1', { mathscores: 'score' }, function(score) {
+    });
     $('#results').append('<textarea readonly>' + 'You score score &plusmn1 is ' + score + '</textarea><br>');
     $('#results').append('<textarea readonly>' + 'The questions you got wrong are :\n' + questionsWrong.toString() + '</textarea>');
     $('textarea').autosize();

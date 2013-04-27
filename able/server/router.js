@@ -47,8 +47,9 @@ module.exports = function(app) {
       AM.updateAccount({
         user    : req.param('user'),
         name    : req.param('name'),
-        email     : req.param('email'),
-        pass    : req.param('pass')
+        email   : req.param('email'),
+        pass    : req.param('pass'),
+        mathscores  : req.param('mathscores'),
       }, function(e, o){
         if (e){
           res.send('error-updating-account', 400);
@@ -74,10 +75,11 @@ module.exports = function(app) {
 
   app.post('/signup', function(req, res){
     AM.addNewAccount({
-      name  : req.param('name'),
-      email   : req.param('email'),
-      user  : req.param('user'),
-      pass  : req.param('pass'),
+      name        : req.param('name'),
+      email       : req.param('email'),
+      user        : req.param('user'),
+      pass        : req.param('pass'),
+      mathscores  : req.param(''),
     }, function(e){
       if (e){
         res.send(e, 400);
@@ -148,6 +150,16 @@ module.exports = function(app) {
       res.render('math1', {
         title : 'Math ACT Prep Test',
         udata : req.session.user
+      });
+    }
+  });
+
+  app.post('/math1', function(req,res) {
+    if (req.session.user == null) {
+      res.redirect('/');
+    } else {
+      AM.addMathScore({
+        mathscores  : req.param('mathscores'),
       });
     }
   });
