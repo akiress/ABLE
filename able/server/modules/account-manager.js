@@ -95,20 +95,23 @@ exports.updatePassword = function(email, newPass, callback) {
 exports.addMathScore = function(req, callback) {
 	console.log(req);
 	accounts.findOne({user:req.user}, function(e, o) {
-		console.log(req.mathscores);
-		//o.mathscores.push(req.mathscores);
-		console.log(o);
+		var score = req.mathscores;
+		console.log('Score is ' + score);
 		if (e) {
 			callback(e);
 		} else {
 			// accounts.save(o, {safe: true}, callback);
 			if ( {mathscores: {$exists: true}}) {
-				console.log('Working in if at least');
+				accounts.update( {name: req.user}, {$push: {mathscores: req.mathscores}}, {safe: true}, function(err) {
+					if (err) {
+						console.warn(err.message);
+					} else {
+						console.log('updated');
+					}
+				});
 			} else {
-				accounts.insert( {mathscores : req.body.mathscores}, {safe: true}, callback);
+				console.warn('uh-oh');
 			}
-
-			console.log(o.mathscores + ' has been inserted into math scores');
 		}
 	});
 }

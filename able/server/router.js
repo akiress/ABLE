@@ -78,6 +78,7 @@ module.exports = function(app) {
       email       : req.param('email'),
       user        : req.param('user'),
       pass        : req.param('pass'),
+      mathscores  : [],
     }, function(e){
       if (e){
         res.send(e, 400);
