@@ -45,13 +45,12 @@ module.exports = function(app) {
   app.post('/home', function(req, res){
     if (req.param('user') != undefined) {
       AM.updateAccount({
-        user    : req.param('user'),
-        name    : req.param('name'),
-        email   : req.param('email'),
-        pass    : req.param('pass'),
-        mathscores  : req.param('mathscores'),
+        user        : req.param('user'),
+        name        : req.param('name'),
+        email       : req.param('email'),
+        pass        : req.param('pass'),
       }, function(e, o){
-        if (e){
+        if (e) {
           res.send('error-updating-account', 400);
         } else {
           req.session.user = o;
@@ -79,7 +78,6 @@ module.exports = function(app) {
       email       : req.param('email'),
       user        : req.param('user'),
       pass        : req.param('pass'),
-      mathscores  : req.param(''),
     }, function(e){
       if (e){
         res.send(e, 400);
@@ -91,7 +89,7 @@ module.exports = function(app) {
 
   app.post('/lost-password', function(req, res){
     AM.getAccountByEmail(req.param('email'), function(o){
-      if (o){
+      if (o) {
         res.send('ok', 200);
         EM.dispatchResetPasswordLink(o, function(e, m){
           if (!e) {
@@ -158,8 +156,16 @@ module.exports = function(app) {
     if (req.session.user == null) {
       res.redirect('/');
     } else {
+      var score = req.body.mathscores;
       AM.addMathScore({
-        mathscores  : req.param('mathscores'),
+        user        : req.session.user.user,
+        mathscores  : score,
+      }, function(e) {
+        if (e) {
+          res.send(e, 400);
+        } else {
+          res.send('ok', 200);
+        }
       });
     }
   });
@@ -302,6 +308,17 @@ module.exports = function(app) {
     } else {
       res.render('esstuts', {
         title : 'Essay Tutorials',
+        udata : req.session.user
+      });
+    }
+  });
+
+  app.get('/scores', function(req, res) {
+    if (req.session.user == null) {
+      res.redirect('/');
+    } else {
+      res.render('scores', {
+        title : 'ACT Scores',
         udata : req.session.user
       });
     }

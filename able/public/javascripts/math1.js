@@ -58,10 +58,10 @@ $(document).ready(function() {
     $('#results').html('');
     var percentage = a / totalQuestions;
     var score = Math.round(percentage * 36);
-    $.get('/math1', { mathscores: 'score' }, function(score) {
+    $.post('/math1', { mathscores: score }, function(score) {
     });
-    $('#results').append('<textarea readonly>' + 'You score score &plusmn1 is ' + score + '</textarea><br>');
-    $('#results').append('<textarea readonly>' + 'The questions you got wrong are :\n' + questionsWrong.toString() + '</textarea>');
+    $('#results').append('<textarea readonly>' + 'You score score is ' + score + '</textarea><br>');
+    $('#results').append('<textarea readonly>' + 'The questions you got wrong are :\n\n' + questionsWrong.toString() + '</textarea>');
     $('textarea').autosize();
     $('#test').html('');
   }
