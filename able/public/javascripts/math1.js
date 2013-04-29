@@ -55,14 +55,22 @@ $(document).ready(function() {
   }
 
   function printResults(a, s) {
-    $('#results').html('');
+    this.resultsModal = $('.modal-alert');
+    this.resultsModal.modal({ show : false, keyboard : true, backdrop : true });
+
+    this.showResults = function(h, b) {
+      $('.modal-alert .modal-header h3').text(h);
+      $('.modal-alert .modal-body p').text(b);
+      console.log(h);
+      console.log(b);
+      this.resultsModal.modal('show');
+    }
+
     var percentage = a / totalQuestions;
     var score = Math.round(percentage * 36);
     $.post('/math1', { mathscores: score }, function(score) {
     });
-    $('#results').append('<textarea readonly>' + 'You score score is ' + score + '</textarea><br>');
-    $('#results').append('<textarea readonly>' + 'The questions you got wrong are :\n\n' + questionsWrong.toString() + '</textarea>');
-    $('textarea').autosize();
-    $('#test').html('');
+
+    this.showResults('Your score is ' + score, 'The questions you got wrong are :' + questionsWrong.toString());
   }
 })

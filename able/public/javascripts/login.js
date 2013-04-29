@@ -9,6 +9,8 @@ $(document).ready(function() {
 
 		this.showLoginError = function(t, m) {
 			$('.modal-alert .modal-header h3').text(t);
+			console.log(m);
+			if (m == undefined) m = '';
 			$('.modal-alert .modal-body p').text(m);
 			this.loginErrors.modal('show');
 		}
@@ -21,7 +23,7 @@ $(document).ready(function() {
 		} else if ($('#pass-tf').val() == '') {
 			this.showLoginError('Please enter a valid password');
 			return false;
-		} else{ 
+		} else { 
 			return true;
 		}
 	}

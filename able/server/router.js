@@ -79,6 +79,9 @@ module.exports = function(app) {
       user        : req.param('user'),
       pass        : req.param('pass'),
       mathscores  : [],
+      sciscores   : [],
+      engscores   : [],
+      rdscores    : [],
     }, function(e){
       if (e){
         res.send(e, 400);
@@ -166,6 +169,10 @@ module.exports = function(app) {
           res.send(e, 400);
         } else {
           res.send('ok', 200);
+          res.render('math1', {
+            title : 'Math ACT Prep Test',
+            udata : req.session.user
+          });
         }
       });
     }

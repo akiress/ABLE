@@ -273,3 +273,7 @@ p, body, li {
 ul, ol {
     margin: 0 auto;
 }
+
+#btn-logout {
+    margin: 0.5% 0 0 90%;
+}
