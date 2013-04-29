@@ -71,6 +71,9 @@ $(document).ready(function() {
     $.post('/math1', { mathscores: score }, function(score) {
     });
 
-    this.showResults('Your score is ' + score, 'The questions you got wrong are :' + questionsWrong.toString());
+    var qWrong = questionsWrong.toString();
+    var qlW = qWrong.length();
+
+    this.showResults('Your score is ' + score, 'The questions you got wrong are:' + questionsWrong.toString());
   }
 })
