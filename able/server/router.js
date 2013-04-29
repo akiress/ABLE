@@ -169,10 +169,7 @@ module.exports = function(app) {
           res.send(e, 400);
         } else {
           res.send('ok', 200);
-          res.render('math1', {
-            title : 'Math ACT Prep Test',
-            udata : req.session.user
-          });
+          res.redirect('/home')
         }
       });
     }

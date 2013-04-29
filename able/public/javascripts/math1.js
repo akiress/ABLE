@@ -53,27 +53,52 @@ $(document).ready(function() {
     }
     return correct;
   }
-
+  // Array Remove - By John Resig (MIT Licensed)
+  Array.prototype.remove = function(from, to) {
+    var rest = this.slice((to || from) + 1 || this.length);
+    this.length = from < 0 ? this.length + from : from;
+    return this.push.apply(this, rest);
+  };
   function printResults(a, s) {
+    var qwResults = '';
+    var resultsWrong = '';
     this.resultsModal = $('.modal-alert');
     this.resultsModal.modal({ show : false, keyboard : true, backdrop : true });
 
     this.showResults = function(h, b) {
       $('.modal-alert .modal-header h3').text(h);
       $('.modal-alert .modal-body p').text(b);
-      console.log(h);
-      console.log(b);
       this.resultsModal.modal('show');
     }
 
     var percentage = a / totalQuestions;
     var score = Math.round(percentage * 36);
+    
+    while (questionsWrong.length > 0) {
+      qwResults = questionsWrong[0].toString();
+      qwResults = qwResults + ', ';
+      questionsWrong.remove(0);
+      if (qwResults.length == 15) {
+        if (qwResults[15] == ',') {
+          qwResults[15] = '\n';
+        } else if (qwResults[16] == ',') {
+          qwResults[16] = '\n';
+        } else {
+          qwResults[14] = '\n'
+        }
+      }
+      resultsWrong = resultsWrong + qwResults;
+      qwResults = '';
+    }
+
+    if (resultsWrong[resultsWrong.length - 2] == ',') {
+      resultsWrong = resultsWrong.substr(0, resultsWrong.length - 2);
+    }
+
+    this.showResults('Your score is ' + score, 'The questions you got wrong are:' + '\n' + resultsWrong);
+
     $.post('/math1', { mathscores: score }, function(score) {
+      console.log('Score: ' + score);
     });
-
-    var qWrong = questionsWrong.toString();
-    var qlW = qWrong.length();
-
-    this.showResults('Your score is ' + score, 'The questions you got wrong are:' + questionsWrong.toString());
   }
 })

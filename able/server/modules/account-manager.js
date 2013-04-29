@@ -11,7 +11,7 @@ var db = new MongoDB(dbName, new Server(dbHost, dbPort, {auto_reconnect: true}),
 	db.open(function(e, d){
 	if (e) {
 		console.log(e);
-	}	else{
+	} else {
 		console.log('connected to database :: ' + dbName);
 	}
 });
@@ -22,7 +22,7 @@ exports.autoLogin = function(user, pass, callback) {
 	accounts.findOne({user:user}, function(e, o) {
 		if (o){
 			o.pass == pass ? callback(o) : callback(null);
-		}	else{
+		} else {
 			callback(null);
 		}
 	});
@@ -32,7 +32,7 @@ exports.manualLogin = function(user, pass, callback) {
 	accounts.findOne({user:user}, function(e, o) {
 		if (o == null){
 			callback('user-not-found');
-		}	else{
+		} else {
 			validatePassword(pass, o.pass, function(err, res) {
 				if (res){
 					callback(null, o);
@@ -48,11 +48,11 @@ exports.addNewAccount = function(newData, callback) {
 	accounts.findOne({user:newData.user}, function(e, o) {
 		if (o) {
 			callback('username-taken');
-		}	else{
+		} else {
 			accounts.findOne({email:newData.email}, function(e, o) {
 				if (o){
 					callback('email-taken');
-				}	else{
+				} else {
 					saltAndHash(newData.pass, function(hash){
 						newData.pass = hash;
 						newData.date = moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -93,25 +93,18 @@ exports.updatePassword = function(email, newPass, callback) {
 }
 
 exports.addMathScore = function(req, callback) {
-	console.log(req);
 	accounts.findOne({user:req.user}, function(e, o) {
 		var score = req.mathscores;
-		console.log('Score is ' + score);
 		if (e) {
 			callback(e);
 		} else {
-			// accounts.save(o, {safe: true}, callback);
-			if ( {mathscores: {$exists: true}}) {
-				accounts.update( {name: req.user}, {$push: {mathscores: req.mathscores}}, {safe: true}, function(err) {
-					if (err) {
-						console.warn(err.message);
-					} else {
-						console.log('updated');
-					}
-				});
-			} else {
-				console.warn('uh-oh');
-			}
+			accounts.update( {name: req.user}, {$push: {mathscores: req.mathscores}}, {safe: true}, function(err) {
+				if (err) {
+					console.warn(err.message);
+				} else {
+					console.log('updated');
+				}
+			});
 		}
 	});
 }
