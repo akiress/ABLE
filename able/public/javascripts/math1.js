@@ -1,16 +1,29 @@
 $(document).ready(function() {
+  // var socket = io.connect();
   var totalQuestions = 60;
   var actualAnswers = new Array();
   var questionsWrong = new Array();
+
+  /*socket.on('connect', function() {
+    console.log('connected');
+    socket.emit('pageID', 'page1');
+  });
+
+  socket.on('disconnect', function() {
+    console.log('disconnected');
+  });
+
+  socket.on('error', function(err) {
+    if (err === 'handshake error') {
+      console.log('handshake error', err);
+    } else {
+      console.log('io error', err);
+    }
+  });*/
   
   var correctAnswers = ['D','C','A','D','E','B','D','B','A','C','D','C','B','D','C','C','E','D','E','E','D','A','D','C','C',
   'B','D','E','C','D','A','E','B','E','C','C','A','E','B','C','C','A','B','A','A','C','C','E','B','E','D','A','C','E',
   'A','A','B','C','E','B'];
-
-  var prealgebra = [
-  ];
-
-  prealgebra = 
 
   $('#test_btn.submit_btn').click(function() {
     var incorrect = null
@@ -59,15 +72,16 @@ $(document).ready(function() {
     this.length = from < 0 ? this.length + from : from;
     return this.push.apply(this, rest);
   };
+
   function printResults(a, s) {
     var qwResults = '';
     var resultsWrong = '';
-    this.resultsModal = $('.modal-alert');
+    this.resultsModal = $('.modal-results');
     this.resultsModal.modal({ show : false, keyboard : true, backdrop : true });
 
     this.showResults = function(h, b) {
-      $('.modal-alert .modal-header h3').text(h);
-      $('.modal-alert .modal-body p').text(b);
+      $('.modal-results .modal-header h3').text(h);
+      $('.modal-results .modal-body p').text(b);
       this.resultsModal.modal('show');
     }
 

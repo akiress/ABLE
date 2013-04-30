@@ -7,6 +7,7 @@ append head
      link(href='/stylesheets/math.css', rel='stylesheet', type='text/css')
 
 append content
+     include modals/results
      form(method='POST', name='mathTest')
           #test
                ol
@@ -90,7 +91,7 @@ append content
                          | E) 40
                          hr
                     li
-                         | For all x >2, (2x
+                         | For all x > 2, (2x
                          sup 2
                          | + 2x - 12) / (x - 2) simplifies to
                          br
@@ -215,19 +216,19 @@ append content
                          | ?
                          br
                          input(type='radio', name='q11', value='A')
-                         | A) 1/200
+                         | A) a > 0 and b ≠ -4
                          br
                          input(type='radio', name='q11', value='B')
-                         | B) 1/50
+                         | B) a > 0 and b ≠ 4
                          br
                          input(type='radio', name='q11', value='C')
-                         | C) 1/49
+                         | C) a < 0 and b ≥ -4
                          br
                          input(type='radio', name='q11', value='D')
-                         | D) 49/1
+                         | D) a < 0 and b ≠ -4 
                          br
                          input(type='radio', name='q11', value='E')
-                         | E) 50/1
+                         | E) a < 0 and b ≤ -4
                          hr
                     li
                          | In a shipment of televisions, 1/50 of the televisions are defective. What is the ratio of defective to nondefective televisions?
